@@ -1,164 +1,794 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmed Mandouh | Backend Developer</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <img src="images/ahmed.jpg" alt="Ahmed Mandouh" class="profile-img" />
-        <h1>Ahmed Mandouh</h1>
-        <p>Backend Developer</p>
-        <p>
-          <a href="mailto:ahmedmandouh101@gmail.com"
-            >ahmedmandouh101@gmail.com</a
-          >
-          | +201080868769
-        </p>
-        <p>
-          <a href="https://github.com/ahmedmandouh101" target="_blank"
-            >GitHub</a
-          >
-          |
-          <a href="https://www.linkedin.com/in/ahmed-mandouh/" target="_blank"
-            >LinkedIn</a
-          >
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Mandouh — Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root[data-theme="dark"] {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --bg3: #1a1a24;
+      --border: #ffffff0f;
+      --border-hover: #ffffff22;
+      --text: #e8e8f0;
+      --text-dim: #6b6b80;
+      --text-mid: #9999b0;
+      --accent: #7c6af7;
+      --accent2: #3ecfcf;
+      --accent-glow: #7c6af733;
+      --tag-bg: #7c6af715;
+      --tag-border: #7c6af730;
+      --card-bg: #111118;
+      --nav-bg: #0a0a0fee;
+    }
+    :root[data-theme="light"] {
+      --bg: #f4f3ff;
+      --bg2: #ffffff;
+      --bg3: #eeecff;
+      --border: #00000010;
+      --border-hover: #00000020;
+      --text: #0f0f1a;
+      --text-dim: #9090a8;
+      --text-mid: #555568;
+      --accent: #5b48f0;
+      --accent2: #0fa8a8;
+      --accent-glow: #5b48f020;
+      --tag-bg: #5b48f010;
+      --tag-border: #5b48f030;
+      --card-bg: #ffffff;
+      --nav-bg: #f4f3ffee;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem; color: var(--text-mid);
+      text-decoration: none; letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    .theme-toggle {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 6px; width: 36px; height: 36px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: var(--text-mid); font-size: 1rem; transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 6rem 2rem 4rem;
+      max-width: 1100px; margin: 0 auto;
+      position: relative;
+    }
+    .hero-content { flex: 1; }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem; color: var(--accent);
+      letter-spacing: 0.15em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--accent);
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px var(--text-dim);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem; color: var(--text-mid);
+      max-width: 520px; line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; transition: all 0.2s; cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      border: 1px solid var(--accent);
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border-hover);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-stats {
+      margin-top: 4rem;
+      display: flex; gap: 3rem; flex-wrap: wrap;
+    }
+    .stat { }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem; font-weight: 800;
+      color: var(--text); line-height: 1;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; color: var(--text-dim);
+      letter-spacing: 0.08em; margin-top: 0.25rem;
+    }
+
+    /* ── SECTION ── */
+    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem; color: var(--accent);
+      letter-spacing: 0.15em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::before {
+      content: ''; display: block;
+      width: 24px; height: 1px; background: var(--accent);
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800; letter-spacing: -1px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      max-width: 1100px; margin: 0 auto;
+      height: 1px; background: var(--border);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1px; }
+    .exp-item {
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 2rem; padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta { }
+    .exp-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem; color: var(--text-dim);
+      letter-spacing: 0.05em; margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-size: 0.85rem; color: var(--accent2);
+      font-weight: 500;
+    }
+    .exp-info { }
+    .exp-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .exp-type {
+      display: inline-flex;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem; color: var(--accent);
+      background: var(--tag-bg); border: 1px solid var(--tag-border);
+      padding: 0.15rem 0.5rem; border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .exp-desc { color: var(--text-mid); font-size: 0.95rem; line-height: 1.65; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .project-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, var(--bg3) 0%, var(--card-bg) 100%);
+      border-color: var(--border-hover);
+    }
+    @media (max-width: 700px) { .project-card.featured { grid-column: span 1; } }
+
+    .project-header {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; margin-bottom: 1rem;
+    }
+    .project-icon {
+      font-size: 1.5rem;
+      width: 48px; height: 48px;
+      background: var(--tag-bg); border: 1px solid var(--tag-border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-arrow {
+      color: var(--text-dim); font-size: 1.1rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .project-card:hover .project-arrow { color: var(--accent); transform: translate(3px,-3px); }
+
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .project-desc {
+      color: var(--text-mid); font-size: 0.9rem;
+      line-height: 1.6; flex: 1; margin-bottom: 1.25rem;
+    }
+    .project-private {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem; color: var(--text-dim);
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 0.15rem 0.5rem; border-radius: 4px;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem; color: var(--text-mid);
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-group {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+    }
+    .skill-group-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; color: var(--accent);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-item {
+      font-size: 0.85rem; color: var(--text);
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem; border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+    .skill-item:hover { border-color: var(--accent2); }
+    .skill-item.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--tag-bg);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+    @media (max-width: 680px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-text h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem; font-weight: 800; margin-bottom: 1rem;
+    }
+    .contact-text p { color: var(--text-mid); line-height: 1.7; }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 10px; text-decoration: none; color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); }
+    .contact-link-icon {
+      font-size: 1.1rem; width: 36px; height: 36px;
+      background: var(--tag-bg); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-link-label { font-size: 0.9rem; }
+    .contact-link-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem; color: var(--text-dim); margin-top: 0.1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; color: var(--text-dim);
+    }
+    footer p span { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+    .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+    .hero-desc { animation: fadeUp 0.6s 0.2s ease both; }
+    .hero-ctas { animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-stats { animation: fadeUp 0.6s 0.4s ease both; }
+
+    /* ── BG GLOW ── */
+    .bg-glow {
+      position: fixed; top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 640px) {
+      .nav-links a { display: none; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">AM<span>.</span></a>
+  <div class="nav-links">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☀</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto;position:relative;z-index:1">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Backend Developer · Cairo, Egypt</div>
+      <h1>Ahmed<br /><em>Mandouh</em></h1>
+      <p class="hero-desc">
+        I build robust, well-structured APIs and backend systems with PHP &amp; Laravel.
+        Currently crafting a large-scale property rental platform at Runsoft —
+        endpoint by endpoint.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#contact">Get in touch ↗</a>
+        <a class="btn btn-ghost" href="https://github.com/ahmedmandouh101" target="_blank">GitHub →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">1<span>+</span></div>
+          <div class="stat-label">YRS EXPERIENCE</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5<span>+</span></div>
+          <div class="stat-label">PROJECTS SHIPPED</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">V10</div>
+          <div class="stat-label">API VERSIONS MAINTAINED</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">2024 — Present</div>
+        <div class="exp-company">Runsoft</div>
+      </div>
+      <div class="exp-info">
+        <div class="exp-title">Backend Developer</div>
+        <span class="exp-type">Full-time · Cairo, Egypt</span>
+        <p class="exp-desc">
+          Working on BayToStay — a large-scale Airbnb-like platform for the Egyptian market.
+          Building and maintaining RESTful APIs across a V1–V10 versioned codebase in Laravel.
+          Responsibilities include designing endpoints, writing FormRequests, API Resources,
+          Service classes, unit filtering logic, payment plan features, and bug fixing
+          in a production environment — independently navigating a complex, inherited codebase.
         </p>
       </div>
-    </header>
+    </div>
 
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#volunteering">Volunteering</a></li>
-      </ul>
-    </nav>
-
-    <main>
-      <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-          I am a skilled developer with extensive knowledge in various backend
-          programming languages, frameworks, and databases. My ultimate goal is
-          to become the best developer I can be. I have a strong passion for
-          learning new skills, acquiring more knowledge, and seeking
-          opportunities to gain more experience.
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Apr 2024 — Jun 2024</div>
+        <div class="exp-company">Intern2Grow</div>
+      </div>
+      <div class="exp-info">
+        <div class="exp-title">Backend Developer Intern</div>
+        <span class="exp-type">Internship · Remote</span>
+        <p class="exp-desc">
+          Completed 3 backend projects covering REST API design, authentication, and database modeling.
         </p>
-      </section>
+      </div>
+    </div>
 
-      <section id="education" class="container">
-        <h2>Education</h2>
-        <p>
-          <strong>Bachelor's</strong>, Menofia University (2020 – 2024) | Egypt
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Sep 2023 — Jun 2024</div>
+        <div class="exp-company">NAMI</div>
+      </div>
+      <div class="exp-info">
+        <div class="exp-title">Backend Developer</div>
+        <span class="exp-type">Part-time · Egypt</span>
+        <p class="exp-desc">
+          Developed and maintained backend services, contributing to production systems.
         </p>
-        <p>Major: Computer Science</p>
-      </section>
+      </div>
+    </div>
 
-      <section id="experience" class="container">
-        <h2>Professional Experience</h2>
-
-        <h3>
-          <a href="https://nami-tec.com/en" target="_blank"
-            >NAMI, Backend Developer</a
-          >
-        </h3>
-        <p>09/2023 – 06/2024 | Egypt</p>
-        <p>Developed and maintained backend services.</p>
-
-        <h3>
-          <a
-            href="https://www.linkedin.com/school/information-technology-institute-iti-/?originalSubdomain=eg"
-            target="_blank"
-            >Information Technology Institute (ITI), Summer Training</a
-          >
-        </h3>
-        <p>07/2022 – 08/2022 | Egypt</p>
-        <p>Intro to web development (Frontend, Database, Backend)</p>
-
-        <h3>
-          <a href="https://intern2grow.pages.dev/" target="_blank"
-            >Intern2Grow, Backend Internship</a
-          >
-        </h3>
-        <p>04/2024 – 06/2024</p>
-        <p>Developed 3 backend projects.</p>
-      </section>
-
-      <section id="projects" class="container">
-        <h2>Projects</h2>
-
-        <h3>
-          <a href="https://github.com/ahmedmandouh101/Planit" target="_blank"
-            >Booking APP (PLAN IT) - 02/2024</a
-          >
-        </h3>
-        <p>
-          PLAN IT is a tour booking app reshaping the travel experience. It
-          simplifies booking for tours, hotels, restaurants, and entertainment
-          venues in one convenient platform.
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-period">Jul 2022 — Aug 2022</div>
+        <div class="exp-company">ITI</div>
+      </div>
+      <div class="exp-info">
+        <div class="exp-title">Summer Training</div>
+        <span class="exp-type">Training · Egypt</span>
+        <p class="exp-desc">
+          Intro to web development covering frontend, databases, and backend fundamentals.
         </p>
-        <p>
-          <strong>Technologies:</strong> Node.js, Express, MongoDB, Mongoose
-        </p>
+      </div>
+    </div>
 
-        <h3>
-          <a href="https://github.com/ahmedmandouh101/eCommerce" target="_blank"
-            >Ecommerce Project (CommerceCore) - 08/2024</a
-          >
-        </h3>
-        <p>
-          CommerceCore is an E-Commerce platform where users can browse
-          products, manage shopping carts, and complete purchases.
-        </p>
-        <p>
-          <strong>Technologies:</strong> Node.js, Express, MongoDB, JWT, Payment
-          Integration
-        </p>
+  </div>
+</section>
 
-        <h3>
-          <a href="https://github.com/ahmedmandouh101/collegeMS" target="_blank"
-            >College Management System (CMS) - 02/2023</a
-          >
-        </h3>
-        <p>
-          Developed a comprehensive College Management System to streamline
-          administrative tasks, manage student data, and enhance communication
-          between faculty and students.
-        </p>
-        <p><strong>Technologies:</strong> PHP, Laravel, MySQL</p>
-      </section>
+<div class="divider"></div>
 
-      <section id="skills" class="container">
-        <h2>Skills</h2>
-        <p><strong>Back-end:</strong> Node.js, Express, Nest , Laravel</p>
-        <p><strong>Front-end:</strong> HTML, CSS, JavaScript</p>
-        <p>
-          <strong>Technical Skills:</strong> OOP, DS & Algo, PS, SQl , Git,
-          SOLID , GraphQL , socket.io and Docker
-        </p>
-        <p>
-          <strong>Programming Languages:</strong> C++, Java, PHP, JavaScript ,
-          TypeScript
-        </p>
-        <p><strong>Databases:</strong> MySQL, MongoDB</p>
-      </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
 
-      <section id="volunteering" class="container">
-        <h2>Volunteering</h2>
-        <h3>MUFIX Community</h3>
-        <p>Member of the development team.</p>
-      </section>
-    </main>
+    <!-- BayToStay - Featured -->
+    <div class="project-card featured" style="cursor:default">
+      <div class="project-header">
+        <div class="project-icon">🏠</div>
+        <span class="project-private">🔒 Private Repo</span>
+      </div>
+      <div class="project-name">BayToStay</div>
+      <p class="project-desc">
+        A full-scale property rental platform for the Egyptian market — think Airbnb for Egypt.
+        I'm building and maintaining its backend at Runsoft: API versioning (V1–V10),
+        unit filtering, payment plans, admin endpoints, and multilingual responses (AR/EN).
+      </p>
+      <div class="tags">
+        <span class="tag">Laravel 10</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">JWT</span>
+        <span class="tag">API Resources</span>
+        <span class="tag">Paytabs</span>
+        <span class="tag">Sanctum</span>
+        <span class="tag">Service Pattern</span>
+      </div>
+    </div>
 
-    <footer>
-      <p>&copy; 2024 Ahmed Mandouh. All rights reserved.</p>
-    </footer>
-  </body>
+    <!-- GarageLog -->
+    <a class="project-card" href="https://github.com/ahmedmandouh101/garagelog" target="_blank">
+      <div class="project-header">
+        <div class="project-icon">🚗</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-name">GarageLog</div>
+      <p class="project-desc">
+        "Your car's memory — because your mechanic doesn't have one."
+        A REST API for car maintenance tracking built for the Egyptian market.
+        Features role-based access (Owner / Mechanic / Admin), full service history per car,
+        parts tracking, reminders, ratings, and 16 automated tests.
+      </p>
+      <div class="tags">
+        <span class="tag">Laravel 11</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Sanctum</span>
+        <span class="tag">RBAC</span>
+        <span class="tag">PHPUnit</span>
+      </div>
+    </a>
+
+    <!-- College Management API -->
+    <a class="project-card" href="https://github.com/ahmedmandouh101/college-management-api" target="_blank">
+      <div class="project-header">
+        <div class="project-icon">🎓</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-name">College Management API</div>
+      <p class="project-desc">
+        A comprehensive REST API for managing students, faculty, and courses.
+        Built from scratch with role-based auth, full CRUD, and API Resources.
+        The project that landed me my first professional role.
+      </p>
+      <div class="tags">
+        <span class="tag">Laravel 11</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Sanctum</span>
+        <span class="tag">API Resources</span>
+        <span class="tag">Form Requests</span>
+      </div>
+    </a>
+
+    <!-- College Management System -->
+    <a class="project-card" href="https://github.com/ahmedmandouh101/collegeMS" target="_blank">
+      <div class="project-header">
+        <div class="project-icon">🏫</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-name">College Management System</div>
+      <p class="project-desc">
+        A full web application to streamline administrative tasks, manage student data,
+        and improve communication between faculty and students.
+      </p>
+      <div class="tags">
+        <span class="tag">PHP</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">MySQL</span>
+      </div>
+    </a>
+
+    <!-- CommerceCore -->
+    <a class="project-card" href="https://github.com/ahmedmandouh101/eCommerce" target="_blank">
+      <div class="project-header">
+        <div class="project-icon">🛒</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-name">CommerceCore</div>
+      <p class="project-desc">
+        An e-commerce platform where users can browse products, manage carts,
+        and complete purchases with payment integration.
+      </p>
+      <div class="tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">JWT</span>
+        <span class="tag">Payments</span>
+      </div>
+    </a>
+
+    <!-- PLAN IT -->
+    <a class="project-card" href="https://github.com/ahmedmandouh101/Planit" target="_blank">
+      <div class="project-header">
+        <div class="project-icon">✈️</div>
+        <span class="project-arrow">↗</span>
+      </div>
+      <div class="project-name">PLAN IT</div>
+      <p class="project-desc">
+        A tour booking app reshaping the travel experience — simplifies booking
+        for tours, hotels, restaurants, and entertainment venues in one platform.
+      </p>
+      <div class="tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">Mongoose</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Stack</div>
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <div class="skill-group-title">Primary Stack</div>
+      <div class="skill-items">
+        <span class="skill-item primary">PHP</span>
+        <span class="skill-item primary">Laravel</span>
+        <span class="skill-item primary">MySQL</span>
+        <span class="skill-item primary">REST API</span>
+        <span class="skill-item">Eloquent ORM</span>
+        <span class="skill-item">API Resources</span>
+        <span class="skill-item">Form Requests</span>
+        <span class="skill-item">Service Pattern</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Auth & Security</div>
+      <div class="skill-items">
+        <span class="skill-item">Laravel Sanctum</span>
+        <span class="skill-item">JWT</span>
+        <span class="skill-item">RBAC</span>
+        <span class="skill-item">OTP Verification</span>
+        <span class="skill-item">Social Login</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Testing & Quality</div>
+      <div class="skill-items">
+        <span class="skill-item">PHPUnit</span>
+        <span class="skill-item">Laravel Tests</span>
+        <span class="skill-item">Postman</span>
+        <span class="skill-item">SOLID Principles</span>
+        <span class="skill-item">OOP</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Also Know</div>
+      <div class="skill-items">
+        <span class="skill-item">Node.js</span>
+        <span class="skill-item">Express</span>
+        <span class="skill-item">MongoDB</span>
+        <span class="skill-item">TypeScript</span>
+        <span class="skill-item">GraphQL</span>
+        <span class="skill-item">Socket.io</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Tools & DevOps</div>
+      <div class="skill-items">
+        <span class="skill-item">Git</span>
+        <span class="skill-item">GitHub</span>
+        <span class="skill-item">Docker</span>
+        <span class="skill-item">Linux</span>
+        <span class="skill-item">Herd</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-group-title">Education</div>
+      <div class="skill-items">
+        <span class="skill-item">B.Sc. Computer Science</span>
+        <span class="skill-item">Menofia University</span>
+        <span class="skill-item">2020 – 2024</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Reach out</div>
+  <h2 class="section-title">Let's talk</h2>
+  <div class="contact-grid">
+    <div class="contact-text">
+      <h3>Open to new<br/>opportunities.</h3>
+      <p>
+        Whether it's a full-time role, a freelance project, or just a chat
+        about backend architecture — I'm always happy to connect.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="mailto:ahmedmandouh101@gmail.com">
+        <div class="contact-link-icon">✉️</div>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-value">ahmedmandouh101@gmail.com</div>
+        </div>
+      </a>
+      <a class="contact-link" href="https://github.com/ahmedmandouh101" target="_blank">
+        <div class="contact-link-icon">🐙</div>
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-value">ahmedmandouh101</div>
+        </div>
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/ahmed-mandouh/" target="_blank">
+        <div class="contact-link-icon">💼</div>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-value">/in/ahmed-mandouh</div>
+        </div>
+      </a>
+      <a class="contact-link" href="tel:+201080868769">
+        <div class="contact-link-icon">📞</div>
+        <div>
+          <div class="contact-link-label">Phone</div>
+          <div class="contact-link-value">+20 108 086 8769</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Ahmed Mandouh</span>. Built with clean HTML — no frameworks needed.</p>
+  <p style="font-size:0.65rem">Cairo, Egypt 🇪🇬</p>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    document.querySelector('.theme-toggle').textContent = current === 'dark' ? '🌙' : '☀';
+  }
+</script>
+</body>
 </html>
