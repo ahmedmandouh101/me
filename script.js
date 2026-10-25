@@ -6,7 +6,7 @@ function setTheme(theme) {
   root.dataset.theme = theme;
   themeButton.textContent = theme === 'dark' ? '☀' : '☾';
   themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0b1220' : '#f8fafc';
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#06080e' : '#f8fafc';
 }
 let savedTheme;
 try { savedTheme = localStorage.getItem('portfolio-theme-navy'); } catch {}
