@@ -6,14 +6,14 @@ function setTheme(theme) {
   root.dataset.theme = theme;
   themeButton.textContent = theme === 'dark' ? '☀' : '☾';
   themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
-  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#101210' : '#f5f4ed';
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#080f1e' : '#f4f7ff';
 }
 let savedTheme;
-try { savedTheme = localStorage.getItem('portfolio-theme'); } catch {}
+try { savedTheme = localStorage.getItem('portfolio-theme-navy'); } catch {}
 setTheme(savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'dark');
 themeButton.addEventListener('click', () => {
   setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-  try { localStorage.setItem('portfolio-theme', root.dataset.theme); } catch {}
+  try { localStorage.setItem('portfolio-theme-navy', root.dataset.theme); } catch {}
 });
 function closeMenu() {
   navigation.classList.remove('is-open');
