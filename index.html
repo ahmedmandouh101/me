@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=folio2" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -17,7 +17,7 @@
 <div class="bg-glow"></div>
 
 <nav aria-label="Main navigation">
-  <a class="nav-logo" href="#" aria-label="Ahmed Mandouh home"><b class="am-mark">AM</b> Ahmed Mandouh</a>
+  <a class="nav-logo" href="#" aria-label="Ahmed Mandouh home">Ahmed Mandouh<span>.</span></a>
   <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" type="button">Menu <span aria-hidden="true">☰</span></button>
   <div class="nav-links" id="nav-links">
     <a href="#experience">Experience</a>
@@ -31,33 +31,30 @@
 
 <main id="main">
 
-<header class="masthead">
-  <div class="cover">
-    <figure class="cover-portrait">
-      <img src="images/ahmed.jpg" alt="Ahmed Mandouh" width="400" height="480" fetchpriority="high">
-      <figcaption><span>CAIRO, EGYPT</span><span>30° N / 31° E</span></figcaption>
-    </figure>
-    <div class="cover-copy">
-      <p class="folio-label"><span class="folio-rule"></span> ENGINEERING PORTFOLIO &nbsp; / &nbsp; 2026</p>
-      <h1>Ahmed<br><i>Mandouh</i></h1>
-      <p class="cover-role">Backend Developer <span>at Runsoft</span></p>
-      <p class="cover-summary">I build APIs for rental availability, bookings and payments, from the first date check to the final balance.</p>
-      <div class="cover-actions"><a class="cover-primary" href="#projects">Selected work ↓</a><a href="images/Ahmed_Mandouh_Backend_Developer_CV.pdf?v=folio2" download="Ahmed-Mandouh-CV.pdf">Download CV ↗</a></div>
+<div class="hero-container">
+  <div class="hero">
+    <div class="portrait-wrap"><div class="portrait-topline"><span>AHMED / BACKEND DEVELOPER</span><span class="profile-dot">●</span></div><div class="hero-photo"><img src="images/ahmed.jpg" alt="Ahmed Mandouh" width="400" height="480" fetchpriority="high" /></div><p class="portrait-caption"><span>Cairo, Egypt</span><span>PHP · LARAVEL · NODE.JS</span></p></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">BACKEND DEVELOPER</p>
+      <h1>Ahmed<br /><span>Mandouh.</span></h1>
+      <p class="hero-kicker">Backend developer at <a href="https://runsofteg.com/">Runsoft</a></p>
+      <p class="hero-desc">I build the APIs behind rental bookings and payments. My work at Runsoft keeps availability, reservations, and balances consistent across web and mobile.</p>
+      <div class="hero-ctas"><a class="btn btn-primary" href="#projects">Explore projects <span aria-hidden="true">↗</span></a><a class="btn btn-ghost" href="images/Ahmed_Mandouh_Backend_Developer_CV.pdf?v=20261104" download="Ahmed-Mandouh-CV.pdf">Download CV <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-socials"><a href="https://github.com/ahmedmandouh101" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/ahmedmandouh101/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="mailto:ahmedmandouh101@gmail.com">Email ↗</a></div>
     </div>
   </div>
-  <div class="discipline"><span>01 &nbsp; API DESIGN</span><span>02 &nbsp; BOOKING SYSTEMS</span><span>03 &nbsp; PAYMENT WORKFLOWS</span></div>
-</header>
+</div>
+<div class="divider"></div>
 
 <section id="projects">
-  <div class="section-label">PORTFOLIO INDEX &nbsp; / &nbsp; 01–05</div>
-  <h2 class="section-title">Selected <i>work.</i></h2>
+  <div class="section-label">SELECTED WORK</div>
+  <h2 class="section-title">Selected projects<span class="title-dot">.</span></h2>
   <p class="section-intro">Production experience and personal projects, built around practical problems.</p>
   <div class="project-toolbar" role="group" aria-label="Filter projects"><button class="filter-button active" data-filter="all" aria-pressed="true">All projects <span>05</span></button><button class="filter-button" data-filter="laravel" aria-pressed="false">Laravel</button><button class="filter-button" data-filter="node" aria-pressed="false">Node.js</button></div>
   <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
   <div class="projects-grid">
 
     <article class="project-card case-study" data-stack="laravel">
-      <div class="case-art"><img src="images/booking-plan.svg" alt="Illustration of a rental floor plan and a booking calendar"></div>
       <div class="case-intro">
         <p class="section-label">PRODUCTION WORK &nbsp; / &nbsp; RUNSOFT</p>
         <h3>BayToStay</h3>
@@ -66,7 +63,7 @@
         <a class="project-cta" href="https://baytostay.com/" target="_blank" rel="noopener noreferrer">Visit BayToStay ↗</a>
       </div>
       <div class="case-notes">
-        <h4>Engineering notes</h4>
+        <h4>Inside the booking flow</h4>
         <dl>
           <dt>01 &nbsp; Check availability</dt><dd>Validate dates against blocked periods and existing bookings to prevent overlaps.</dd>
           <dt>02 &nbsp; Record the payment</dt><dd>Track partial payments and the remaining balance as the booking changes state.</dd>
@@ -281,7 +278,7 @@
 
 <section id="contact">
   <div class="section-label">GET IN TOUCH</div>
-  <h2 class="section-title">Get in <i>touch.</i></h2>
+  <h2 class="section-title">Let’s work together<span>.</span></h2>
   <div class="contact-grid">
     <div class="contact-text">
       <h3>Get in touch with Ahmed</h3>

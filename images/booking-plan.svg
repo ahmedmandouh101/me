@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
-  <defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#ffffff" opacity=".09"/></pattern></defs>
-  <rect width="600" height="350" fill="#243ee1"/><rect width="600" height="350" fill="url(#grid)"/>
-  <g fill="#d9e4ff" font-family="monospace" font-size="12" letter-spacing="2"><text x="30" y="34">BAYTOSTAY / RENTAL SYSTEM</text><text x="30" y="321">FIG. 01</text></g>
-  <g transform="translate(110 67) skewY(-9)" fill="none" stroke="#edf0ff" stroke-width="5"><path fill="#536cfa" d="M0 17H235V207H0Z"/><path d="M145 17V87M145 110V207M0 114H63M87 114H145M145 88H235"/><g stroke-width="1.5"><rect x="14" y="28" width="52" height="58"/><path d="M14 40H66"/><rect x="163" y="30" width="44" height="27"/><circle cx="182" cy="151" r="20"/><path d="M0 226H235M0 221V231M235 221V231"/></g></g>
-  <g transform="translate(348 130)"><rect x="5" y="7" width="148" height="118" rx="6" fill="#121d76"/><rect width="148" height="118" rx="6" fill="#eef1ff"/><text x="14" y="25" fill="#27387e" font-family="monospace" font-size="10">AVAILABILITY</text><g fill="#c3cee8"><path d="M14 42h19v17H14zM39 42h19v17H39zM64 42h19v17H64zM89 42h19v17H89zM114 42h19v17h-19zM14 67h19v17H14zM114 67h19v17h-19z"/></g><rect x="39" y="67" width="69" height="17" rx="3" fill="#3651f6"/><path d="M14 96h46" stroke="#8192b9" stroke-width="3"/></g>
-</svg>
