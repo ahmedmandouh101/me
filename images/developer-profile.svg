@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="Ahmed Mandouh, Backend Developer">
+  <rect width="1200" height="320" fill="#101829"/>
+  <g transform="translate(902 162)" fill="none" stroke-width="2">
+    <g stroke="#637aff"><path d="m0 -116 130 64v91L0 104l-130 -65v-91z"/><path d="m-130 -52 130 64 130 -64M0 12v92"/><path d="m-130 -22 130 64 130 -64m-260 30L0 72 130 8"/></g>
+    <path d="m0 -116 130 64L0 12l-130 -64z" fill="#3953fa" stroke="#8292ff"/><path d="m0 -80 58 28L0 -24l-58 -28z" fill="#c9d4ff"/>
+  </g>
+  <g font-family="Arial,sans-serif"><text x="54" y="56" fill="#aebaff" font-size="15" letter-spacing="3">BACKEND ENGINEERING   /   CAIRO</text><text x="49" y="157" fill="#faf8f3" font-size="83" font-weight="700" letter-spacing="-4">Ahmed Mandouh</text><text x="54" y="208" fill="#ccd5e5" font-size="22">Laravel, Node.js and the APIs behind bookings and payments.</text></g>
+  <path d="M54 252h1092" stroke="#475268"/><text x="54" y="286" font-family="monospace" font-size="14" letter-spacing="2" fill="#c3cce3">DEVELOPER PROFILE</text><text x="1146" y="286" text-anchor="end" font-family="monospace" font-size="14" fill="#c3cce3">AM / 01</text>
+</svg>
