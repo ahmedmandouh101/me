@@ -90,3 +90,19 @@ h1>span { color:transparent; -webkit-text-stroke:1px var(--accent); }
 @media(max-width:1220px) { .hero { grid-template-columns:1fr 330px; gap:55px; } .hero-photo { height:350px; } }
 @media(max-width:950px) { .nav-links { gap:15px; padding-inline:15px; } .nav-links>a { font-size:11px; } .hero { grid-template-columns:1fr 290px; gap:35px; } h1 { font-size:61px; } .hero-photo { height:320px; } .portrait-caption { font-size:7px; } .education-badge { display:none; } }
 @media(max-width:700px) { nav { height:72px; } .nav-links { background:transparent; border:0; box-shadow:none; padding:0; } .nav-links.is-open { top:72px; background:var(--surface); border-radius:0 0 18px 18px; border-bottom:1px solid var(--border); padding:22px; } .nav-links.is-open>a { font-size:13px; } .hero { padding-top:100px; padding-bottom:55px; gap:30px; } .portrait-wrap { width:245px; padding:13px; border-radius:20px; } .portrait-topline { font-size:6px; margin-bottom:12px; } .hero-photo { height:245px; border-radius:11px; } .portrait-caption { margin-top:12px; font-size:6px; } h1 { font-size:59px; letter-spacing:-3px; } .hero-kicker { font-size:21px; } .hero-eyebrow { font-size:9px; } .section-title { font-size:31px; letter-spacing:-1px; } .project-card,.project-card.featured { padding:24px; } .project-name { font-size:23px; } .btn { border-radius:11px; padding:13px 17px; font-size:11px; } .education-card { padding:23px; gap:17px; flex-wrap:wrap; } .education-mark { width:42px; height:42px; font-size:14px; border-radius:10px; } .education-details { width:100%; } .education-details h3 { font-size:22px; } .education-details>p:not(.education-university) { font-size:13px; } }
+
+.hero-kicker a { color:var(--accent); text-underline-offset:4px; }
+.hero-kicker a:hover { text-decoration:underline; }
+.case-study { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,5vw,68px); padding:clamp(24px,4vw,48px); border-color:#697dff58; }
+.case-intro .section-label { margin-bottom:24px; }
+.case-intro h3 { font-size:clamp(32px,4vw,46px); line-height:1.15; letter-spacing:-.04em; }
+.case-intro .project-subtitle { margin-block:10px 20px; }
+.case-notes { border-left:1px solid var(--border); padding-left:clamp(20px,3vw,36px); }
+.case-notes h4 { font-size:16px; font-weight:600; margin-bottom:18px; }
+.case-notes dt { color:var(--text); font-size:13px; font-weight:600; }
+.case-notes dd { margin:4px 0 16px; color:var(--muted); font-size:13px; line-height:1.7; }
+.case-notes dd:last-child { margin-bottom:0; }
+@media(max-width:700px) {
+  .case-study { grid-template-columns:1fr; gap:24px; }
+  .case-notes { border-left:0; border-top:1px solid var(--border); padding:22px 0 0; }
+}
